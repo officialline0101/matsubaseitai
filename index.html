@@ -987,8 +987,8 @@
         <div class="label" id="course">メニューをお選びください<span class="required">必須</span></div>
         <div class="info-text">※メニューを選択すると空き状況のカレンダーが表示されます</div>
         <div class="menu-sections">
-            <button type="button" onclick="showMenu('male')">整体メニュー</button>
-            <button type="button" onclick="showMenu('female')">ホワイトニング</button>
+            <button type="button" onclick="showMenu('male')">初回の方はこちら</button>
+            <button type="button" onclick="showMenu('female')">2回目以降の方はこちら</button>
         </div>
 
         <!-- メニュー表示エリア（選択されたメニュー名がここに出る） -->
@@ -998,14 +998,16 @@
 
         <div id="male" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">◆整体メニュー◆</span>
+                <span class="highlight-text">◆初回の方はこちら◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-category="整体メニュー" data-price="15000">人気No.3【初回】ショートコース(30分)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-category="整体メニュー" data-price="15000">人気No.1【初回】通常コース(60分)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-category="整体メニュー" data-price="15000">人気No.2【初回】ロングコース(90分)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment4')" data-category="整体メニュー" data-price="15000">部分可視光線治療1照射(10分)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment5')" data-category="整体メニュー" data-price="15000">全身同時6照射(30分)</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-category="初回の方はこちら" data-price="15000">【初回】ショートコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-category="初回の方はこちら" data-price="15000">【初回】通常コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-category="初回の方はこちら" data-price="15000">【初回】ロングコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment4')" data-category="初回の方はこちら" data-price="15000">お試しホワイトニング-オープン記念・初回無料体験</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment5')" data-category="初回の方はこちら" data-price="15000">お手軽コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment6')" data-category="初回の方はこちら" data-price="15000">特別コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment7')" data-category="初回の方はこちら" data-price="15000">部分可視光線治療のみ限定</button>
             </div>
             <div class="highlight-background">
                 <span class="highlight-text">オプション</span>
@@ -1022,12 +1024,17 @@
 
         <div id="female" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">◆ホワイトニング◆</span>
+                <span class="highlight-text">◆2回目以降の方はこちら◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment6')" data-category="ホワイトニング" data-price="15000">お試しホワイトニング-オープン記念 初回無料体験</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment7')" data-category="ホワイトニング" data-price="15000">お手軽コース</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment8')" data-category="ホワイトニング" data-price="15000">特別コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment8')" data-category="2回目以降の方はこちら" data-price="15000">お試しホワイトニング-オープン記念・初回無料体験</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment9')" data-category="2回目以降の方はこちら" data-price="15000">お手軽コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment10')" data-category="2回目以降の方はこちら" data-price="15000">特別コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment11')" data-category="2回目以降の方はこちら" data-price="15000">【回数券お持ちの方限定】プラチナホワイトニング</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment12')" data-category="2回目以降の方はこちら" data-price="15000">【リピーター】ショートコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment13')" data-category="2回目以降の方はこちら" data-price="15000">【リピーター】通常コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment14')" data-category="2回目以降の方はこちら" data-price="15000">【リピーター】ロングコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment15')" data-category="2回目以降の方はこちら" data-price="15000">部分可視光線治療のみ限定</button>
             </div>
             <div class="highlight-background">
                 <span class="highlight-text">オプション</span>
@@ -1110,7 +1117,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             liff.init({
-                liffId: '2007776277-ROpkY0wE'
+                liffId: '2005254357-zKma9BZk'
             }).then(() => {
                 console.log('LIFF初期化成功');
             }).catch((err) => {
@@ -1138,13 +1145,11 @@
         let selectedirradiationsTime = 0; // 訪問回数で選択された時間
 
         let menuTimes = {
-            '人気No.3【初回】ショートコース(30分)': 60,
-            '人気No.1【初回】通常コース(60分)': 90,
-            '人気No.2【初回】ロングコース(90分)': 120,
+            '【初回】ショートコース': 60,
+            '【初回】通常コース': 90,
+            '【初回】ロングコース': 120,
             'お試しホワイトニング-オープン記念・初回無料体験': 120,
             'お手軽コース': 60,
-            '部分可視光線治療1照射(10分)': 10,
-            '全身同時6照射(30分)': 30,
             '特別コース': 90,
             '【回数券お持ちの方限定】プラチナホワイトニング': 90,
             '【リピーター】ショートコース': 30,
@@ -1646,7 +1651,7 @@
                 return;
             }
 
-            const url = 'https://script.google.com/macros/s/AKfycbzQHD-N6LFHChIAcYw0pN7BvMY18WnVskzJ5rCf5Z_SpjJg6-S4h3bfX5tpuc05DTVcPw/exec' +
+            const url = 'https://script.google.com/macros/s/AKfycbwCxnJaxGZ46c3TnnesuZcD_zuxuVoSHoDHo5MxkRzChcK5vZDwBs4HstzkXO-KLyuDYA/exec' +
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
             try {
